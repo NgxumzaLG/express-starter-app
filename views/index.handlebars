@@ -1,15 +1,116 @@
-<h1>Counter Index</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zandy Pizzas</title>
+  <link rel="stylesheet" href="./style.css">
 
+</head>
+<body>
+    <header class="navbar">
+        <div class=" container flex">
+            <h2>Zandy Pizzas</h2>
+            <nav>
+                <ul>
+                    <li class="current"><a href="/">Home</a></li>
+                    <li><a href="/orders">Orders</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-<div>
-    Start here
+    <section class="showcase-pizza">
+      <div class="container flex pizza-info">
+        <div class="flex-item small-pizza">
+          <div class="pizza-pic">
+            <img src="pizza.png" alt="">
+            <h2>Small Pizza</h2>
+          </div>
 
-    <form action="/count" method="post">
-        <div class="counter" >
-            {{counter}}
-        </div>    
-        <input type="submit" value="Press button to count">
-    
-    </form>
+          <div class="pizza-info">
+            <h3>R<span>35.00</span></h3>
+            <ul>
+              <li>small pizza with 3 toppings</li>
+              <li>1 meat topping.</li>
+              <li>3 or less other toppings.</li>
+            </ul>
+          </div>
 
-</div>
+          <div class="orderBox">
+              <button class="btn" style="margin-left: auto">Buy Pizza</button>
+          </div> 
+
+        </div>
+
+        <div class="flex-item medium-pizza">
+          <div class="pizza-pic">
+            <img src="pizza.png" alt="">
+            <h2>Medium Pizza</h2>
+          </div>
+
+          <div class="pizza-info">
+            <h3>R<span>65.00</span></h3>
+            <ul>
+              <li>medium margeritha pizza with 3 toppings max.</li>
+              <li>2 or less meat topping.</li>
+              <li>3 or less other toppings.</li>
+            </ul>
+          </div>
+
+          <div class="orderBox">
+              <button class="btn" style="margin-left: auto">Buy Pizza</button>
+          </div> 
+          
+        </div>
+
+        <div class="flex-item large-pizza">
+          <div class="pizza-pic">
+            <img src="pizza.png" alt="">
+            <h2>Large Pizza</h2>
+          </div>
+
+          <div class="pizza-info">
+            <h3>R<span>85.00</span></h3>
+            <ul>
+              <li>large margeritha pizza with 3 toppings max.</li>
+              <li>2 or less meat topping.</li>
+              <li>3 meat toppings max.</li>
+            </ul>    
+          </div>
+
+          <div class="orderBox">
+              <button class="btn" style="margin-left: auto">Buy Pizza</button>
+          </div> 
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="cart">
+      <div class="container pizza-cart">
+        <h3>Shopping Cart</h3>
+        <table>
+          <tr>
+            <td>Small</td>
+            <td>x1</td>
+            <td>R<span>0.00</span></td>
+          </tr>
+          <tr>
+            <td>Medium</td>
+            <td>x1</td>
+            <td>R<span>0.00</span></td>
+          </tr>
+          <tr>
+            <td>Large</td>
+            <td>x1</td>
+            <td>R<span>0.00</span></td>
+          </tr>
+        </table>
+      </div>
+    </section>
+  
+</body>
+</html>

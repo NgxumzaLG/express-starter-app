@@ -19,9 +19,7 @@ app.set('view engine', 'handlebars');
 let counter = 0;
 
 app.get('/', function(req, res) {
-	res.render('index', {
-		counter
-	});
+	res.render('index');
 });
 
 app.post('/count', function(req, res) {

@@ -1,21 +1,97 @@
+@import url(https://fonts.googleapis.com/css?family=Lato:400,300,300italic,400italic,700,700italic);
+
 body {
-	background-color: greenyellow;
-	font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+	padding: 0;   
+	margin: 0;
+	background-color: #00cc99ff;
+	font-family: 'Lato', Helvetica, sans-serif;
 }
+
+/* UTILITIES */
 
 .container {
-	margin: auto;
-	background-color: honeydew;
-	width: 80%;
-	padding: 1em;
+  max-width: 1024px;
+  margin: 0 auto;
+  overflow: auto;
+  padding: 0 25px;
 }
 
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-.counter {
-	background-color: lightgray;
-	font-size: 2em;
-	width: 3em;
-	text-align: center;
-	padding: 0.5em;
-	margin-bottom: 0.25em;
+/* HEADER... */
+
+.navbar  {
+    height: 75px;
+    border-bottom: 0.1px #2191fbff solid;
+}
+
+.navbar .flex{
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar ul {
+    display: flex;
+	list-style: none;
+}
+
+.navbar a {
+    padding: 10px;
+    margin: 0 5px;
+	text-decoration: none;
+}
+
+.navbar a:hover {
+    border-bottom: 3px white solid;
+    font-weight: bold;
+}
+
+.current a {
+    color: white;
+}
+
+/* SHOWCASE PIZZA */
+
+.pizza-pic img{	
+	float: left;
+	width: 4em;
+	margin: 5px 20px 5px 5px;
+}
+
+.pizza-info {
+	clear: left;
+	margin-left: 10px;
+}
+
+.small-pizza {
+	background-color: #E03571;
+}
+
+.medium-pizza {
+	background-color: #E2AE3D;
+}
+
+.large-pizza {
+	background-color: #E06733;
+}
+
+.flex-item {
+	flex: 1;
+	margin: 5px;
+	border-radius: 7.5px;
+	padding: 6px;
+}
+
+.btn {
+	padding: 5px;
+	margin: 5px;
+	font-size: 1em;
+	background-color: #2191fbff;
+	border-radius: 0.25em;
+	border: 0 solid snow;
+	color: snow;
 }
