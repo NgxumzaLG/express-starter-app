@@ -8,12 +8,12 @@ describe('Zandy Pizza', function () {
 
             pizzaCart.buyPizza('small');
 
-            assert.deepEqual({ largePizza: 0,
-                                largeUnit: 0,
-                                mediumPizza: 0,
-                                mediumUnit: 0,
-                                smallPizza: 31.99,
-                                smallUnit: 1 }, pizzaCart.getPizza());
+            assert.deepEqual({ strLarge: "0.00",
+                                strLargeUnit: 0,
+                                strMedium: "0.00",
+                                strMediumUnit: 0,
+                                strSmall: "31.99",
+                                strSmallUnit: 1 }, pizzaCart.getPizza());
         });
 
         it('It should be able to buy medium pizza', function () {
@@ -21,12 +21,12 @@ describe('Zandy Pizza', function () {
 
             pizzaCart.buyPizza('medium');
 
-            assert.deepEqual({ largePizza: 0, 
-                                largeUnit: 0,
-                                mediumPizza: 58.99,
-                                mediumUnit: 1,
-                                smallPizza: 0,
-                                smallUnit: 0 }, pizzaCart.getPizza());
+            assert.deepEqual({ strLarge: "0.00", 
+                                strLargeUnit: 0,
+                                strMedium: "58.99",
+                                strMediumUnit: 1,
+                                strSmall: "0.00",
+                                strSmallUnit: 0 }, pizzaCart.getPizza());
         });
 
         it('It should be able to buy large pizza', function () {
@@ -34,12 +34,12 @@ describe('Zandy Pizza', function () {
 
             pizzaCart.buyPizza('large');
 
-            assert.deepEqual({ largePizza: 87.99,
-                                largeUnit: 1,
-                                mediumPizza: 0,
-                                mediumUnit: 0,
-                                smallPizza: 0,
-                                smallUnit: 0 }, pizzaCart.getPizza());
+            assert.deepEqual({ strLarge: "87.99",
+                                strLargeUnit: 1,
+                                strMedium: "0.00",
+                                strMediumUnit: 0,
+                                strSmall: "0.00",
+                                strSmallUnit: 0 }, pizzaCart.getPizza());
         });
     });
 
