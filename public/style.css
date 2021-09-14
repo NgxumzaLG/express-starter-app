@@ -18,14 +18,14 @@ body {
 
 .flex {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  /* justify-content: center;
+  align-items: center; */
 }
 
 /* HEADER... */
 
 .navbar  {
-    height: 75px;
+    height: 55px;
     border-bottom: 0.1px #2191fbff solid;
 }
 
@@ -39,10 +39,14 @@ body {
 	list-style: none;
 }
 
-.navbar a {
+.navbar a, .info a, .single-order a {
     padding: 10px;
     margin: 0 5px;
 	text-decoration: none;
+}
+
+.navbar a {
+	color: black;
 }
 
 .navbar a:hover {
@@ -55,6 +59,10 @@ body {
 }
 
 /* SHOWCASE PIZZA */
+
+.info{
+	margin: 7.5px;
+}
 
 .pizza-pic img{	
 	float: left;
@@ -86,12 +94,178 @@ body {
 	padding: 6px;
 }
 
-.btn {
+.buyBtn {
+    display: inline-block;
+    padding: 5px 10px;
+    cursor: pointer;
+    background-color: #2191fbff;
+    border-radius: 0.25em;
+    margin: 1%;
+	color: snow;
+	font-size: 1em;
+}
+
+.buyBtn:hover {
+    transform: scale(0.90);
+}
+
+.unitText {
+	margin: 0px 2.5px;
+}
+
+/* SHOWCASE CART */
+
+.pizza-cart {
+	width: 50%;
+	margin: auto;
+	text-align: center;
+	background-color: #f7f7f7ff;
+	border-radius: 7.5px;
+}
+
+.small-text, .medium-text, .large-text, .total-text {
+	justify-content: space-between;
 	padding: 5px;
+	width: 75%;
+	margin: auto;
+}
+
+.small-text h4, .medium-text h4, .large-text h4, .total-text h4 {
+	margin: 2px;
+}
+
+.total-text{
+	border-top: 0.5px #2191fbff solid;
+}
+
+.units {
+	flex: 2;
+}
+
+.text, .prices {
+	flex: 1;
+}
+
+.text {
+	text-align: left;
+}
+
+.prices {
+	text-align: right;
+}
+
+.orderBtn {
+	margin: 7.5px;
+}
+
+.btn {
+	padding: 10px;
 	margin: 5px;
 	font-size: 1em;
 	background-color: #2191fbff;
 	border-radius: 0.25em;
 	border: 0 solid snow;
 	color: snow;
+}
+
+.btn:hover {
+	transform: scale(1.1);
+}
+
+/* ORDERS SCREEN */
+
+.strOrder {
+	margin: 15px 25px;
+}
+
+.display-orders {
+	width: 85%;
+	height: 45ch;
+	margin: auto;
+	padding: 15px;
+	text-align: center;
+	background-color: #f7f7f7ff;
+	border-radius: 7.5px;
+}
+
+th {
+    border: 1px #2191fbff solid;
+    border-collapse: collapse;
+	padding: 5px;
+}
+
+table, td {
+    padding: 7px;
+}
+
+table {
+    width: 80%;
+	margin: auto;
+}
+
+/* ORDER SUMMARY */
+
+.single-order {
+	width: 65%;
+	height: 30ch;
+	margin: auto;
+	padding: 15px;
+	text-align: center;
+	background-color: #f7f7f7ff;
+	border-radius: 7.5px;
+	margin-top: 20px;
+}
+
+/* MEDIA QUERY */
+
+@media screen and (max-width:716px) {
+    .showcase-pizza .flex {
+		flex-direction: column;
+	}
+
+	.showcase-cart .pizza-cart {
+		width: 80%;
+		
+	}
+
+}
+
+@media screen and (max-width: 433px) {
+	.navbar {
+        height: auto;
+    }
+
+    .navbar .flex {
+        flex-direction: column;
+    }
+    .navbar ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        padding: 5px;
+        min-height: 50px;
+        background-color: rgb(0, 0, 0, 0.1);
+        border-radius: 5px;
+        border: 0.5px solid #2191fbff;
+    }
+    
+    .navbar a {
+        padding: 10px;
+        margin: 0 5px;
+    }
+    
+    .navbar a:hover {
+        border-bottom: 3px solid white;
+        font-weight: bold;
+    }
+    
+    .current a {
+        color: white;
+    }
+
+    .navbar h3 {
+        text-align: center;
+    }
+	
 }

@@ -1,6 +1,9 @@
 const express = require('express');
 const exphbs  = require('express-handlebars');
 
+const pizzaStore = require('./pizzaStore');
+const pizzaCart = pizzaStore();
+
 const app = express();
 const PORT =  process.env.PORT || 3017;
 
@@ -12,21 +15,41 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.static('public'));
 
 // add more middleware to allow for templating support
-
 app.engine('handlebars', exphbs());
 app.set('view engine', 'handlebars');
 
-let counter = 0;
-
 app.get('/', function(req, res) {
-	res.render('index');
+	res.render('index', {
+		costs: pizzaCart.getPizza(),
+		totals: pizzaCart.addTotal()
+	});
 });
 
-app.post('/count', function(req, res) {
-	counter++;
-	res.redirect('/')
+app.get('/buy/:pizzaType', function(req, res) {
+	const pizzaType = req.params.pizzaType;
+	pizzaCart.buyPizza(pizzaType);
+
+	// console.log(pizzaCart.getPizza());
+
+	res.redirect('/');
 });
 
+app.post('/order', function(req, res) {
+	pizzaCart.makeOrder();
+
+	// console.log(pizzaCart.getOrders());
+
+	res.render('orderSummary', {
+		theOrder: pizzaCart.yourOrder()
+	});
+});
+
+app.get('/orders', function(req, res) {
+
+	res.render('orders', {
+		orderList: pizzaCart.getOrders()
+	});
+});
 
 // start  the server and start listening for HTTP request on the PORT number specified...
 app.listen(PORT, function() {

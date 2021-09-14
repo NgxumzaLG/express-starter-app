@@ -22,7 +22,7 @@
     </header>
 
     <section class="showcase-pizza">
-      <div class="container flex pizza-info">
+      <div class="container flex info">
         <div class="flex-item small-pizza">
           <div class="pizza-pic">
             <img src="pizza.png" alt="">
@@ -30,18 +30,15 @@
           </div>
 
           <div class="pizza-info">
-            <h3>R<span>35.00</span></h3>
+            <h3>R<span>31.99</span></h3>
             <ul>
-              <li>small pizza with 3 toppings</li>
+              <li>small margeritha pizza with 3 toppings</li>
               <li>1 meat topping.</li>
               <li>3 or less other toppings.</li>
             </ul>
+
+            <a href="/buy/small" name="pizzaType" value="small" class="buyBtn">Buy Pizza</a>
           </div>
-
-          <div class="orderBox">
-              <button class="btn" style="margin-left: auto">Buy Pizza</button>
-          </div> 
-
         </div>
 
         <div class="flex-item medium-pizza">
@@ -51,18 +48,15 @@
           </div>
 
           <div class="pizza-info">
-            <h3>R<span>65.00</span></h3>
+            <h3>R<span>58.99</span></h3>
             <ul>
               <li>medium margeritha pizza with 3 toppings max.</li>
               <li>2 or less meat topping.</li>
               <li>3 or less other toppings.</li>
             </ul>
-          </div>
 
-          <div class="orderBox">
-              <button class="btn" style="margin-left: auto">Buy Pizza</button>
-          </div> 
-          
+            <a href="/buy/medium" name="pizzaType" value="medium" class="buyBtn">Buy Pizza</a>
+          </div>
         </div>
 
         <div class="flex-item large-pizza">
@@ -72,43 +66,82 @@
           </div>
 
           <div class="pizza-info">
-            <h3>R<span>85.00</span></h3>
+            <h3>R<span>87.99</span></h3>
             <ul>
               <li>large margeritha pizza with 3 toppings max.</li>
               <li>2 or less meat topping.</li>
               <li>3 meat toppings max.</li>
-            </ul>    
+            </ul>
+
+            <a href="/buy/large" name="pizzaType" value="large" class="buyBtn">Buy Pizza</a>   
           </div>
-
-          <div class="orderBox">
-              <button class="btn" style="margin-left: auto">Buy Pizza</button>
-          </div> 
-
         </div>
 
       </div>
     </section>
 
-    <section class="cart">
+    <section class="showcase-cart">
       <div class="container pizza-cart">
         <h3>Shopping Cart</h3>
-        <table>
-          <tr>
-            <td>Small</td>
-            <td>x1</td>
-            <td>R<span>0.00</span></td>
-          </tr>
-          <tr>
-            <td>Medium</td>
-            <td>x1</td>
-            <td>R<span>0.00</span></td>
-          </tr>
-          <tr>
-            <td>Large</td>
-            <td>x1</td>
-            <td>R<span>0.00</span></td>
-          </tr>
-        </table>
+        
+        <form action="/order" method="post">
+           <div class="flex small-text">
+              <div class="text">
+                <h4>Small:</h4>
+              </div>
+              <div class="units">
+                <h4><span class="unitText">{{costs.strSmallUnit}}</span>Unit(s)</h4>
+              </div>
+              <div class="prices">
+                <h4>R<span class="unitText">{{costs.strSmall}}</span></h4>
+              </div>
+          </div>
+
+          <div class="flex medium-text">
+            <div class="text">
+              <h4>Medium:</h4>
+            </div>
+            <div class="units">
+              <h4><span class="unitText">{{costs.strMediumUnit}}</span>Unit(s)</h4>
+            </div>
+            <div class="prices">
+              <h4>R<span class="unitText">{{costs.strMedium}}</span></h4>
+            </div>
+          </div>
+
+          <div class="flex large-text">
+            <div class="text">
+              <h4>Large:</h4>
+            </div>
+            <div class="units">
+              <h4><span class="unitText">{{costs.strLargeUnit}}</span>Unit(s)</h4>
+            </div>
+            <div class="prices">
+              <h4>R<span class="unitText">{{costs.strLarge}}</span></h4>
+            </div>
+          </div>
+
+          <div class="flex total-text">
+            <div class="text">
+              <h4>Total cost:</h4>
+            </div>
+            <div class="units">
+              <h4><span class="unitText">{{totals.totalUnit}}</span>Unit(s)</h4>
+            </div>
+            <div class="prices">
+              <h4>R<span class="unitText">{{totals.totalCost}}</span></h4>
+            </div>
+          </div>
+
+          <div class="orderBtn">
+            <form action="/order" method="POST">
+              <button class="btn" type="submit" name="button">Order</button>
+            </form>
+          </div>
+        </form>
+
+       
+
       </div>
     </section>
   
