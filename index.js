@@ -1,11 +1,23 @@
 const express = require('express');
 const exphbs  = require('express-handlebars');
+const flash = require('express-flash');
+const session = require('express-session');
 
 const pizzaStore = require('./pizzaStore');
 const pizzaCart = pizzaStore();
 
 const app = express();
 const PORT =  process.env.PORT || 3017;
+
+// initialise session middleware - flash-express depends on it
+app.use(session({
+	secret : 'success and error messages',
+	resave: false,
+	saveUninitialized: true
+}));
+
+// initialise the flash middleware
+app.use(flash());
 
 // enable the req.body object - to allow us to use HTML forms
 app.use(express.json());
@@ -37,14 +49,27 @@ app.get('/buy/:pizzaType', function(req, res) {
 app.post('/order', function(req, res) {
 	pizzaCart.makeOrder();
 
+	let checkError = pizzaCart.getError();
+
+	if ( checkError === '') {
+		res.render('orderSummary', {
+			theOrder: pizzaCart.yourOrder()
+		});
+
+	} else {
+		req.flash('error', 'Add atleast 1 item in the Cart');
+		res.redirect('/');
+	}
+
+
 	// console.log(pizzaCart.getOrders());
 
-	res.render('orderSummary', {
-		theOrder: pizzaCart.yourOrder()
-	});
+	
 });
 
 app.get('/orders', function(req, res) {
+	// pizzaCart.makeOrder();
+	// console.log(pizzaCart.getOrders());
 
 	res.render('orders', {
 		orderList: pizzaCart.getOrders()
@@ -53,5 +78,5 @@ app.get('/orders', function(req, res) {
 
 // start  the server and start listening for HTTP request on the PORT number specified...
 app.listen(PORT, function() {
-	console.log(`App started on port ${PORT}`)
+	console.log(`App started on port ${PORT}`);
 });

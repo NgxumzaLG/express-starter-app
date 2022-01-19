@@ -83,6 +83,11 @@
     <section class="showcase-cart">
       <div class="container pizza-cart">
         <h3>Shopping Cart</h3>
+        {{#if messages.error}}
+          <div class="entry">
+              <h4>{{messages.error}}</h4>
+          </div>
+        {{/if}}
         
         <form action="/order" method="post">
            <div class="flex small-text">
@@ -135,7 +140,7 @@
 
           <div class="orderBtn">
             <form action="/order" method="POST">
-              <button class="btn" type="submit" name="button">Order</button>
+              <button class="btn" type="submit" name="button">Place Order</button>
             </form>
           </div>
         </form>

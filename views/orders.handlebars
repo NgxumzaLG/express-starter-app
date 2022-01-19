@@ -28,25 +28,42 @@
         <h3 class="strOrder">Orders</h3>
 
         <div class="display-orders">
-            <table>
-                <tr>
-                    <th>Order No.</th>
-                    <th>Order Status</th>
-                    <th>Units</th>
-                    <th>Price</th>
-                </tr>
-                
+            <div class="table-wrapper">
+                <div class="table-scroll">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Order No.</th>
+                                <th>Order Status</th>
+                                <th>Units</th>
+                                <th>Price</th>
+                            </tr>
 
-                {{#each orderList}}
-                    <tr>
-                        <td>#<span>{{orderId}}</span></td>
-                        <td>{{status}}</td>
-                        <td>{{items}}</td>
-                        <td>R<span>{{amount}}</span></td>
-                    </tr>
+                        </thead>
+                        
+                        <tbody>
+                            {{#each orderList}}
+                                <tr>
+                                    <td>#<span>{{orderId}}</span></td>
+                                    <td>{{status}}</td>
+                                    <td>{{items}}</td>
+                                    <td>R<span>{{amount}}</span></td>
+                                </tr>
 
-                {{/each}}
-            </table>
+                            {{/each}}
+
+                        </tbody>
+                        
+                    </table>
+
+                </div>
+                 
+            </div>
+           
+            <div class="shop-link">
+                <a href="/" class="buyBtn">Shop</a>
+            </div>
+            
         </div>
 
     

@@ -94,7 +94,7 @@ body {
 	padding: 6px;
 }
 
-.buyBtn {
+.buyBtn, .shopBtn {
     display: inline-block;
     padding: 5px 10px;
     cursor: pointer;
@@ -121,6 +121,11 @@ body {
 	text-align: center;
 	background-color: #f7f7f7ff;
 	border-radius: 7.5px;
+}
+
+.entry h4 {
+	margin: 0 0 3.5px 0;
+	color: crimson;
 }
 
 .small-text, .medium-text, .large-text, .total-text {
@@ -180,18 +185,31 @@ body {
 
 .display-orders {
 	width: 85%;
-	height: 45ch;
+	min-height: 45ch;
+	max-height: 60ch;
 	margin: auto;
 	padding: 15px;
 	text-align: center;
 	background-color: #f7f7f7ff;
 	border-radius: 7.5px;
+	text-align: center;
+}
+
+.shop-link {
+    text-align: center;
+	margin: 10px 0 5px 0;
+}
+
+.shop-link a {
+	text-decoration: none;
+	padding: 8.5px 12.5px;
 }
 
 th {
     border: 1px #2191fbff solid;
     border-collapse: collapse;
 	padding: 5px;
+	font-size: 1em;
 }
 
 table, td {
@@ -203,11 +221,30 @@ table {
 	margin: auto;
 }
 
+.order-table {
+	height: 70%;
+}
+
+.table-wrapper {
+  position:relative;
+}
+
+.table-scroll {
+  height:48ch;
+  overflow:auto;  
+  margin-top:20px;
+}
+
+.table-wrapper table {
+  width:100%;
+
+}
+
 /* ORDER SUMMARY */
 
 .single-order {
 	width: 65%;
-	height: 30ch;
+	min-height: 30ch;
 	margin: auto;
 	padding: 15px;
 	text-align: center;
@@ -231,6 +268,10 @@ table {
 }
 
 @media screen and (max-width: 433px) {
+	.container {
+		padding: 0 10px;
+	}
+
 	.navbar {
         height: auto;
     }
@@ -267,5 +308,9 @@ table {
     .navbar h3 {
         text-align: center;
     }
+
+	.display-orders {
+		width: 97.5%;
+	}
 	
 }
